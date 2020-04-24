@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex py-3 flex-row px-3 items-center justify-between bg-gray-800 rounded-tr-lg"
+    class="flex flex-row px-3 py-3 items-center justify-between bg-gray-800 rounded-tr-lg"
   >
     <div class="mx-4">
       <img
@@ -11,11 +11,13 @@
     </div>
 
     <div class="text-center">
-      <h1 class="text-white text-base capitalize">
+      <h1 class="text-white text-base capitalize ">
         {{ currentConversation.name }}
       </h1>
 
-      <p class="text-gray-500 text-xs">{{ currentConversation.status }}</p>
+      <p class="text-gray-500 text-xs leading-none">
+        {{ currentConversation.status }}
+      </p>
     </div>
 
     <div class="flex flex-row">

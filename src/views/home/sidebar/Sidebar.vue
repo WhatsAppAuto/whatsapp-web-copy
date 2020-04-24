@@ -2,12 +2,17 @@
   <div class="flex flex-col w-full h-full flex-1 bg-gray-800 rounded-l-lg">
     <app-sidebar-header />
 
-    <div v-for="contact in contacts" :key="contact._id">
-      <app-contact
-        :contact="contact"
-        @select-contact="handleSelectContact($event)"
-      />
-      <hr class="mx-3 border-gray-600" />
+    <div class="overflow-auto">
+      <div v-for="contact in contacts" :key="contact._id">
+        <app-contact
+          :contact="contact"
+          @select-contact="handleSelectContact($event)"
+        />
+        <hr
+          class="divider"
+          :class="contact.active ? 'border-gray-400' : 'mx-3 border-gray-600'"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -29,7 +34,7 @@ export default {
           name: "john",
           status: "I'm the best",
           photo: "dog1.webp",
-          lastSaw: new Date().toLocaleDateString(),
+          lastSaw: new Date(),
           active: false
         },
         {
@@ -37,7 +42,7 @@ export default {
           name: "marie",
           status: "No, I'm the best",
           photo: "dog2.webp",
-          lastSaw: new Date().toLocaleDateString(),
+          lastSaw: new Date(),
           active: false
         },
         {
@@ -45,7 +50,7 @@ export default {
           name: "peter",
           status: "Yes we are the best",
           photo: "dog3.webp",
-          lastSaw: new Date().toLocaleDateString(),
+          lastSaw: new Date(),
           active: false
         },
         {
@@ -53,7 +58,7 @@ export default {
           name: "peter",
           status: "Yes we are the best",
           photo: "dog3.webp",
-          lastSaw: new Date().toLocaleDateString(),
+          lastSaw: new Date(),
           active: false
         },
         {
@@ -61,7 +66,7 @@ export default {
           name: "peter",
           status: "Yes we are the best",
           photo: "dog3.webp",
-          lastSaw: new Date().toLocaleDateString(),
+          lastSaw: new Date(),
           active: false
         }
       ]
@@ -80,3 +85,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.divider {
+  transition: margin 0.4s;
+}
+</style>

@@ -18,15 +18,22 @@
     </div>
 
     <div>
-      <p class="text-gray-600 text-sm">{{ contact.lastSaw }}</p>
+      <p class="text-gray-600 text-sm">{{ formatDate(contact.lastSaw) }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import formatter from "@/utils/formatter";
+
 export default {
   props: {
     contact: Object
+  },
+  methods: {
+    formatDate(date) {
+      return formatter.dateFormat(date, "HH:mm");
+    }
   }
 };
 </script>
