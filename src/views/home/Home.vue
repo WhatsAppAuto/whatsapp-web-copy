@@ -1,5 +1,5 @@
 <template>
-  <div class="flex bg-white absolute w-full h-full py-10 px-32 bg-purple-500">
+  <div class="flex absolute w-full h-full py-10 px-32 bg-black">
     <app-sidebar />
     <app-chat />
   </div>

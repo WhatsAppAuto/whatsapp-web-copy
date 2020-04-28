@@ -14,12 +14,12 @@
       v-model="message"
     />
 
-    <button>
+    <!-- <button>
       <font-awesome-icon
         icon="microphone"
         class="mx-3 text-gray-600"
       ></font-awesome-icon>
-    </button>
+    </button> -->
 
     <button :disabled="message.length === 0">
       <font-awesome-icon

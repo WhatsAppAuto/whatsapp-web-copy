@@ -1,6 +1,9 @@
 <template>
   <button
-    :class="`bg-${bgColor} rounded px-32 py-2 text-${color}`"
+    :class="
+      `bg-${bgColor} rounded-full md:px-32 py-2 text-${color} ${className}`
+    "
+    :type="type"
     @click="handleClick()"
   >
     {{ text.toUpperCase() }}
@@ -18,6 +21,14 @@ export default {
     color: {
       type: String,
       default: "white"
+    },
+    type: {
+      type: String,
+      default: "submit"
+    },
+    className: {
+      type: String,
+      default: ""
     }
   },
   methods: {
