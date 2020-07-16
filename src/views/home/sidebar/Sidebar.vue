@@ -82,6 +82,10 @@ export default {
 
       this.$store.dispatch("setCurrentConversation", ev);
     }
+  },
+  mounted() {
+    // Marca a primeira conversa como padrão
+    this.contacts[0].active = true;
   }
 };
 </script>
